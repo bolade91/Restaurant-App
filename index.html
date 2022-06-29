@@ -120,7 +120,7 @@
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
                     <a type="button" class="btn btn-warning btn-block"
-                    data-toggle="modal" data-target="#reserveTableModal" title="Or Call us at +852 12345678"
+                    data-toggle="modal" data-target="#reserveTableModal" title="Or Call us at <br><strong>+852 12345678</strong>"
                      data-placement="bottom">Reserve Table</a>
                 </div>
             </div>
@@ -240,6 +240,14 @@
                                 <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>                                                                                            
                             </div>
                         </div>
+                    </div>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
                     </div>
                </div>
                <!-- Controls -->
@@ -427,7 +435,18 @@
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
-         });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        });
     </script>
 </body>
 
